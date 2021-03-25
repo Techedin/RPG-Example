@@ -12,11 +12,13 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
 
     public float runSpeed = 20.0f;
+
    
+
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -28,6 +30,11 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Horizontal", horizontal);
         animator.SetFloat("Vertical", vertical);
         animator.SetFloat("Speed", runSpeed);
+
+
+       
+
+
     }
 
     private void FixedUpdate()

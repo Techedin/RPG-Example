@@ -8,13 +8,17 @@ public class PlayerUIScript : MonoBehaviour
     public GameObject PlayerUI;
     public GameObject PlayerInventory;
 
+    public InventoryUI inventoryUI;
+  
+
     private bool ItemBarActive;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+      
         PlayerInventory.SetActive(false);
+        
        
     }
 
@@ -25,9 +29,10 @@ public class PlayerUIScript : MonoBehaviour
         ItemBarActive = PlayerInventory.activeInHierarchy;
         if(ItemBarActive == false)
         {
-            if (Input.GetKeyDown(KeyCode.I))
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("Key Pressed");
+                inventoryUI.UpdateUI();
+
                 PlayerUIControl(ItemBarActive = false);
 
             }
@@ -36,10 +41,11 @@ public class PlayerUIScript : MonoBehaviour
         else
         {
             
-            if (Input.GetKeyDown(KeyCode.I))
+            if (Input.GetKeyDown(KeyCode.E))
             {
+                inventoryUI.UpdateUI();
                 PlayerUIControl(ItemBarActive = true);
-
+               
             }
         }
 
